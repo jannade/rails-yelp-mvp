@@ -1,0 +1,55 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  </div>
+
+<h1><%= @restaurant.name %></h1>
+
+
+<div class="container">
+  <div class="btn-container">
+    <div class="btn btn-ghost">
+      <%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="card-product">
+      <div class="card-product-infos">
+        <h2>Cuisine</h2>
+        <p><%= @restaurant.category %></p>
+      </div>
+    </div>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <h2>Address</h2>
+        <p><%= @restaurant.address %></p>
+      </div>
+    </div>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <h2>Phone number</h2>
+        <p><%= @restaurant.phone_number %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-box">
+    <h2>All reviews</h2>
+    <% @reviews.each do |review| %>
+      <div class="notification">
+      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+        <div class="notification-content">
+          <p><strong>Rating: <%= review.rating %></strong></p>
+          <p><%= review.content %></p>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+
+
+
+
+
+
+
+

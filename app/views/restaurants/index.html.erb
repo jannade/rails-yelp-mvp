@@ -1,0 +1,38 @@
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  All Your Favorite Restaurants in One Place
+</div>
+
+<div class="btn-container">
+  <div class="btn btn-ghost">
+    <%= link_to "Add a new restaurant", new_restaurant_path %>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-xs-4">
+        <%= link_to restaurant_path(restaurant.id) do %>
+          <div class="card-trip">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= restaurant.name %></h2>
+                <p><%= restaurant.category %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
